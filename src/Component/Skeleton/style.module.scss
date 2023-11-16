@@ -1,0 +1,72 @@
+.ticket {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-width: 502px;
+  padding: 26px 20px 10px;
+  border-radius: 5px;
+  box-shadow:
+    1px 1px 3px rgba(0, 0, 0, 0.09),
+    -1px -1px 3px rgba(0, 0, 0, 0.1);
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    &_price {
+      width: 30%;
+      height: 30px;
+      background: no-repeat;
+      background-image: linear-gradient(
+        to right,
+        rgba(203, 197, 197, 1) 30px,
+        rgba(203, 197, 197, 0.2)
+      );
+      animation: fade 1s linear infinite alternate;
+    }
+    &_logo {
+      width: 30%;
+      height: 30px;
+      background: no-repeat;
+      background-image: linear-gradient(
+        to right,
+        rgba(203, 197, 197, 1) 30px,
+        rgba(203, 197, 197, 0.2)
+      );
+      animation: fade 1s linear infinite alternate;
+    }
+  }
+
+  &_routes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &_items {
+      animation: fade 1s linear infinite alternate;
+      width: 15%;
+      height: 20px;
+      background-image: linear-gradient(
+        to right,
+        rgba(203, 197, 197, 1) 30px,
+        rgba(203, 197, 197, 0.2)
+      );
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .ticket {
+    min-width: 90%;
+  }
+}
