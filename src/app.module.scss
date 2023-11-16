@@ -1,0 +1,33 @@
+.app {
+  background-color: #f3f7fa;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+  overflow: hidden;
+  &_inner {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    &_elem {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .app {
+    padding: 20px;
+    margin: 0;
+    justify-content: center;
+    &_inner {
+      flex-direction: column;
+      justify-content: center;
+      &_elem {
+        align-items: center;
+      }
+    }
+  }
+}
