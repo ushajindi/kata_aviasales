@@ -1,5 +1,5 @@
 ##README
-# Проект "TODO App на хуках"
+# Проект "Aviasales App"
 
 Это проект для создания приложения To-Do List с использованием React, Vite и TypeScript.
 #Ссылка на приложения Vercel [https://kata-aviasales-xi.vercel.app/](https://kata-aviasales-xi.vercel.app/)
