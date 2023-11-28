@@ -1,0 +1,26 @@
+.loader {
+  width: 100%;
+  &_bar {
+    height: 10px;
+    background: linear-gradient(
+      to right,
+      #3498db,
+      #3498db 33.33%,
+      #e74c3c 33.33%,
+      #e74c3c 66.66%,
+      #2ecc71 66.66%,
+      #2ecc71
+    );
+    background-size: 300% 100%;
+    animation: progress 3s linear infinite;
+  }
+}
+
+@keyframes progress {
+  0% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: -300% 0;
+  }
+}

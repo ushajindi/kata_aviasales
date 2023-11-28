@@ -9,6 +9,13 @@
     display: flex;
     justify-content: center;
     gap: 18px;
+    &_loader {
+      top: 0;
+      right: 0;
+      left: 0;
+      position: fixed;
+      z-index: 999999;
+    }
     &_elem {
       display: flex;
       flex-direction: column;

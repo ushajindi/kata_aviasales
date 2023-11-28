@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RootState } from '../../store/store';
 import { FilterStateType } from '../../store/Reducers/filterReducer';
-import s from './style.module.scss';
 import {
   FilterActions as filterActions,
   FilterActionType,
 } from '../../store/Actions/FilterActions';
+import s from './style.module.scss';
 
 interface FilterProps extends PropsFromRedux {
   filterActions: (type: FilterActionType['type']) => FilterActionType;

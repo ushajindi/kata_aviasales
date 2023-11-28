@@ -10,11 +10,11 @@ export type FilterStateType = {
 };
 
 const initial: FilterStateType = {
-  all: false,
-  notTransfers: false,
-  oneTransfer: false,
-  twoTransfer: false,
-  threeTransfer: false,
+  all: true,
+  notTransfers: true,
+  oneTransfer: true,
+  twoTransfer: true,
+  threeTransfer: true,
 };
 function allCheckedFilter(
   data: FilterStateType,

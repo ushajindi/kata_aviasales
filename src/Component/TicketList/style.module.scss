@@ -1,20 +1,20 @@
 .ticketlist {
-  height: 50%;
-  overflow-y: scroll;
-  scrollbar-width: thin; // Firefox
-  -ms-overflow-style: none;
-  scroll-behavior: smooth;
-  &::-webkit-scrollbar {
-    width: 0;
-  }
+  width: 100%;
+  position: relative;
 
   &_inner {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  &_inner:last-child {
-    padding-bottom: 120%;
+    &_btn {
+      background: #2196f3;
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: 10px 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 }
 
@@ -30,5 +30,14 @@
     &_inner:last-child {
       padding-bottom: 0;
     }
+  }
+}
+
+@keyframes progress {
+  0% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: -300% 0;
   }
 }

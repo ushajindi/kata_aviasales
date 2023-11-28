@@ -4,7 +4,9 @@ export type FilterActionType = {
     | 'notTransfers'
     | 'oneTransfer'
     | 'twoTransfer'
-    | 'threeTransfer';
+    | 'threeTransfer'
+    | 'isFAST'
+    | 'isLowPrice';
 };
 export const FilterActions = (
   type: FilterActionType['type']

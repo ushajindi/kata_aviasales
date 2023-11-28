@@ -1,44 +1,60 @@
 import React from 'react';
 import s from './style.module.scss';
-import logo from '../../public/image/avia_logo.png';
+import { TicketType } from '../../store/Reducers/ticketsReducer';
+import { DurationTime, FormatTime, PriceEdit } from './helpers/helpers';
 
-const Ticket: React.FC = () => {
+type PropsType = {
+  tickets: TicketType;
+};
+const Ticket: React.FC<PropsType> = ({
+  tickets: { price, segments, carrier },
+}) => {
+  function routesRender() {
+    return segments.map((el) => {
+      return (
+        <div key={el.duration * Math.random() * 10} className={s.ticket_routes}>
+          <div className={s.ticket_routes_route}>
+            <div className={s.ticket_routes_title}>
+              {el.origin} - {el.destination}
+            </div>
+            <div className={s.ticket_routes_route_time}>
+              {FormatTime(segments)}
+            </div>
+          </div>
+          <div className={s.ticket_routes_leght}>
+            <div className={s.ticket_routes_title}>В пути</div>
+            <div className={s.ticket_routes_leght_time}>
+              {DurationTime(el.duration)}
+            </div>
+          </div>
+          {el.stops.length !== 0 ? (
+            <div className={s.ticket_routes_stops}>
+              <div className={s.ticket_routes_title}>
+                {el.stops.length} пересадки
+              </div>
+              <div className={s.ticket_routes_stops_info}>
+                {el.stops.join(',')}
+              </div>
+            </div>
+          ) : (
+            <div className={s.ticket_routes_stops}>
+              <div className={s.ticket_routes_title}>без пересадок</div>
+              <div className={s.ticket_routes_stops_info} />
+            </div>
+          )}
+        </div>
+      );
+    });
+  }
   return (
     <div className={s.ticket}>
       <div className={s.ticket_header}>
-        <div className={s.ticket_header_price}>13 400 Р</div>
+        <div className={s.ticket_header_price}>{PriceEdit(String(price))}</div>
         <div className={s.ticket_header_logo}>
-          <img src={logo} alt="" />
+          <img src={`https://pics.avs.io/99/36/${carrier}.png`} alt="" />
         </div>
       </div>
-      <div className={s.ticket_routes}>
-        <div className={s.ticket_routes_route}>
-          <div className={s.ticket_routes_title}>MOW - HKT</div>
-          <div className={s.ticket_routes_route_time}>10:45 - 08:00</div>
-        </div>
-        <div className={s.ticket_routes_leght}>
-          <div className={s.ticket_routes_title}>В пути</div>
-          <div className={s.ticket_routes_leght_time}>21ч 15м</div>
-        </div>
-        <div className={s.ticket_routes_stops}>
-          <div className={s.ticket_routes_title}>2 пересадки</div>
-          <div className={s.ticket_routes_stops_info}>HKG,JNB</div>
-        </div>
-      </div>
-      <div className={s.ticket_routes}>
-        <div className={s.ticket_routes_route}>
-          <div className={s.ticket_routes_title}>MOW - HKT</div>
-          <div className={s.ticket_routes_route_time}>10:45 - 08:00</div>
-        </div>
-        <div className={s.ticket_routes_leght}>
-          <div className={s.ticket_routes_title}>В пути</div>
-          <div className={s.ticket_routes_leght_time}>21ч 15м</div>
-        </div>
-        <div className={s.ticket_routes_stops}>
-          <div className={s.ticket_routes_title}>2 пересадки</div>
-          <div className={s.ticket_routes_stops_info}>HKG,JNB</div>
-        </div>
-      </div>
+      {routesRender()}
     </div>
   );
 };
