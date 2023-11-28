@@ -38,7 +38,7 @@ const Ticket: React.FC<PropsType> = ({
             </div>
           ) : (
             <div className={s.ticket_routes_stops}>
-              <div className={s.ticket_routes_title}>без пересадок</div>
+              <div className={s.ticket_routes_title_not}>без пересадок</div>
               <div className={s.ticket_routes_stops_info} />
             </div>
           )}

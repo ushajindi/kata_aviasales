@@ -35,15 +35,29 @@
     font-style: normal;
     font-weight: 600;
     line-height: 21px;
+    &_route {
+      text-align: left;
+    }
     &_title {
       color: #a0b0b9;
       font-family: 'Open Sans', sans-serif;
       font-size: 12px;
       font-style: normal;
       font-weight: 600;
-      line-height: 18px; /* 150% */
+      line-height: 18px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      &_not {
+        color: #a0b0b9;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        width: 20%;
+      }
     }
   }
 }

@@ -53,7 +53,7 @@ const TicketList: React.FC<PropsType> = ({
   }
   const onClickStillBtn = () => {
     setStillTickets((prevState) => {
-      return prevState + prevState;
+      return prevState + 5;
     });
   };
   return (
